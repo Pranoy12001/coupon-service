@@ -36,7 +36,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers("/", "/login").permitAll()
                 .anyRequest().denyAll()
                 .and()
-                .csrf().disable();
+                .csrf().disable()
+                .logout().logoutSuccessUrl("/");
     }
 
     @Bean
